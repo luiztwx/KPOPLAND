@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/kpopland.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="ateez.css" rel="stylesheet">
+    <title>ATEEZ</title>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .popup-content {
+            background-color: #121212;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            color: #f5f5f5;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .lyrics {
+            max-width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <a href="index.html"><img alt="Profile shot for Celina Harris" src="img/kpopland.png" width="140"></a>
+    </div>
+
+    <div class="conteudo">
+        <article class="flow">
+            <h1>ATEEZ</h1>
+            <p>ATEEZ, é um boy group formado pela KQ Entertainment e teve sua estreia oficial dia 24 
+            de outubro de 2018. Possui oito integrantes, sendo eles: Hongjoong, Seonghwa, Yunho, Yeosang, 
+            San, Mingi, Wooyoung e Jongho. O debut foi feito com as músicas ‘Treasure’ e ‘Pirate King’.<br>
+            A energia contagiante do ATEEZ e a forte conexão com seus fãs os tornaram um dos grupos mais
+            populares da quarta geração do K-pop. Hits como 'Say My Name' e 'Guerrilla' marcaram época e 
+            ajudaram a expandir a influência do K-pop no cenário musical global. A apresentação no Coachella
+            foi um marco na carreira do grupo e um momento histórico para a cultura coreana.
+            </p>
+            <div class="team">
+                <ul class="auto-grid" li-style-type: none>
+                    <li li-style-type: none>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Hongjoong</h2>
+                            <p></p>
+                            <img alt="Chaewon" src="https://pm1.aminoapps.com/7426/2bbf55ee81b8a9bae20f1e1c53ca478c7f73560fr1-702-702v2_00.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Seonghwa</h2>
+                            <p></p>
+                            <img alt="Sakura" src="https://pm1.aminoapps.com/9072/c270a38323cbb02e9efd3e17788501fe355dee93r1-1280-1280v2_00.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Yunho</h2>
+                            <p></p>
+                            <img alt="Yunjin" src="https://i.mydramalist.com/QJj2O5_5f.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Yeosang</h2>
+                            <p></p>
+                            <img alt="Yeosang" src="https://preview.redd.it/kpoppie-antics-again-this-time-cast-kang-yeosang-for-me-v0-syl2270nce3c1.jpg?width=640&crop=smart&auto=webp&s=8ed6751fa44c1511b02a3d73606719285c79c2f0" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">San</h2>
+                            <p></p>
+                            <img alt="San" src="https://pm1.aminoapps.com/9072/65fd127e71ff60919be91e18e89f70e2cbce9b2dr1-1280-1280v2_00.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Mingi</h2>
+                            <p></p>
+                            <img alt="Mingi" src="https://64.media.tumblr.com/53ff186d44f8e922ac9ed41bc59031fa/5e11107161cdf150-a0/s1280x1920/a99c884b19ff6ec8d1cc2890bb0a9c13e8206928.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Wooyoung</h2>
+                            <p></p>
+                            <img alt="Wooyoung" src="https://i.pinimg.com/736x/86/01/3d/86013daf0c5a16e6ef46d4d501755c6d.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Jongho</h2>
+                            <p></p>
+                            <img alt="Jongho" src="https://i.pinimg.com/474x/31/5c/47/315c471f578963d411564e9525c4bfc3.jpg" />
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </article>
+
+    </div>
+    <!-- Popup Structure -->
+    <div id="lyricsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h1 id="popupTitle">Título da Música</h1>
+            <div class="lyrics" id="popupLyrics">
+                <!-- Letras serão injetadas aqui -->
+            </div>
+        </div>
+    </div>
+<br>
+    <h3>Músicas</h3>
+
+    <div class="musicas">
+        <div class="player" id="music1">
+            <div class="imgbox">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/3e98bf160535207.63b5fa91c6c87.png" alt="ateez">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Halazia</h4>
+            <audio src="./ateez/halazia.m4a" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Halazia', document.getElementById('lyrics1').innerHTML)">Letra</button>
+            </div>
+        </div>
+
+        <div class="player2" id="music2">
+            <div class="imgbox">
+                <img src="https://i.pinimg.com/originals/26/40/89/2640893cda431c11a9c446166b0125b2.png" alt="lesserafim">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Crazy Form</h4>
+            <audio src="" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Crazy Form', document.getElementById('lyrics2').innerHTML)">Letra</button>
+            </div>
+        </div>
+
+        <div class="player3" id="music3">
+            <div class="imgbox">
+                <img src="https://i.pinimg.com/736x/69/b4/12/69b4120ae3caa08e46493685f0b521c1.jpg" alt="lesserafim">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Guerrilla</h4>
+            <audio src="" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Guerrilla', document.getElementById('lyrics3').innerHTML)">Letra</button>
+            </div>
+        </div>
+
+        <div class="player3" id="music4">
+            <div class="imgbox">
+                <img src="https://ih1.redbubble.net/image.5555111602.3105/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="lesserafim">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Work</h4>
+            <audio src="" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Work', document.getElementById('lyrics4').innerHTML)">Letra</button>
+            </div>
+        </div>
+    </div>
+<br>
+    <h3>Albuns</h3>
+
+
+    <div class="albuns">
+        <div class="card">
+            <img src="https://kpopmusictownla.com/cdn/shop/files/ATEEZ-GOLDENHOUR-_-_-BLUE_800x.jpg?v=1714159731" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">Golden Hour: Part.1</h2>
+            <p class="card-text">È o décimo EP da boy band sul-coreana Ateez. Foi lançado em 31 de maio de 2024 pela KQ Entertainment </p>
+            <span class="card-date">03 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://cdns-images.dzcdn.net/images/cover/d23376c71e824906bf3fe1e1d4713dfa/500x500.jpg" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">The World EP.Fin: Will</h2>
+            <p class="card-text">È o segundo álbum de estúdio em coreano e o quarto álbum de estúdio lançado em 1 de dezembro de 2023 pela KQ Entertainment </p>
+            <span class="card-date">03 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b273ba27e1c8a572e31571a4d589" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">The World EP.2: Outlaw</h2>
+            <p class="card-text">Foi lançado em 16 de junho de 2023 pela KQ Entertainment. É composto por seis faixas, incluindo o single "Bouncy".  </p>
+            <span class="card-date">03 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b2738bc5762a75c18b494803705c" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">Spin Off: From the Witness</h2>
+            <p class="card-text">Foi lançado em 30 de dezembro de 2022, pela KQ Entertainment. O álbum consiste em cinco faixas, incluindo o single principal "Halazia". </p>
+            <span class="card-date">03 de Outubro de 2024</span>
+        </div>
+    </div>
+
+
+    <!-- Letras ocultas -->
+    <div style="display: none;">
+        <div id="lyrics1">
+            <p>빛이 되어주오, oh, Halazia</p>
+            <p>Oh, no, 모든 것이 말라가네, hoo, yeah</p>
+            <p>We all try, but we lose emotion</p>
+            <p>점점 잃어 감에 익숙해져 가, 가</p>
+            <p>마비되어 가네</p>
+            <p>묶여 버린 자유 속에 (yeah)</p>
+            <p>내 안에 작은 fantasy</p>
+            <p>Oh, Halazia, Halazia, Halazia</p>
+            <p>듣고 싶어 난 사랑의 숨소리를</p>
+            <p>알고 싶어 난 이대로 괜찮은지?</p>
+            <p>Mmh, 소리를 잃은 작은 파랑새야 (-새야)</p>
+            <p>속삭임이 들려오는구나 (-구나)</p>
+            <p>시작되는 깊은 울림, 세상을 뒤집을 목소리</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (yeah)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia</p>
+            <p>살아있다는 게 뭔지?</p>
+            <p>느낄 수 없어, 난 이 순간에도</p>
+            <p>한없이 차가운 이 세상을 물들여</p>
+            <p>빛이 되어주오, oh, Halazia</p>
+            <p>제발, 숨다운 숨을 쉬게 해주오, 춤다운 춤을 추게 해주오</p>
+            <p>꿈다운 꿈을 꾸게 해주고, 이 모든 감각을 느끼게 해주오</p>
+            <p>사랑 (마저) 삼켜 (버린) 이곳에 (파도를) 일으킬 때</p>
+            <p>영원 영원할 이 움직임</p>
+            <p>Who are you? (Huh) it's just me, myself and I</p>
+            <p>Who are you? (Who?) 거울 속 비친 넌 누구인가?</p>
+            <p>Who are you? (Ayy) 기대 안에 기대 이 길의 뒤에</p>
+            <p>시대와 미래 사이에 난 어디에 있을까?</p>
+            <p>듣고 싶어 난 사랑의 숨소리를 (just tell me, oh)</p>
+            <p>알고 싶어 난 이대로 괜찮은지? (Oh)</p>
+            <p>Mmh, 소리를 잃은 작은 파랑새야 (-새야)</p>
+            <p>속삭임이 들려오는구나 (-구나)</p>
+            <p>시작되는 깊은 울림, 세상을 뒤집을 목소리</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (yeah)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia</p>
+            <p>살아있다는 게 뭔지?</p>
+            <p>느낄 수 없어, 난 이 순간에도</p>
+            <p>한없이 차가운 이 세상을 물들여</p>
+            <p>빛이 되어주오, oh, Halazia</p>
+            <p>두려움에 가린 진실</p>
+            <p>피어나 저 위로, 선명히 저 위로</p>
+            <p>우린 무얼 위해 이토록 침묵했던 것인가?</p>
+            <p>이건 누구를 위한 어둠 속인가?</p>
+            <p>한 가지 소원을 들어주심 과연 빛을 주실까?</p>
+            <p>차가운 절망 대신 뜨거운 열정을 느끼고 싶어</p>
+            <p>빛이 되어주오, oh, Halazia (no more, keep control)</p>
+            <p>Halazia (no more, keep your soul)</p>
+            <p>Halazia (no more, keep control)</p>
+            <p>Halazia, 어둠을 걷어줘, oh, Halazia</p>
+            <p>빛이 되어주오, oh, Halazia</p>
+            
+        </div>
+        <div id="lyrics2">
+            <p>Crazy, crazy, crazy, I love you...</p>
+        </div>
+        <div id="lyrics3">
+            <p>Really, I’m honestly just sad about my shoes</p>
+        </div>
+        <div id="lyrics4"></div>
+            <p>Really, I’m honestly just sad about my shoes</p>
+        </div>
+    </div>
+
+
+    <script>
+        function openPopup(title, lyrics) {
+            document.getElementById("popupTitle").innerText = title;
+            document.getElementById("popupLyrics").innerHTML = lyrics;
+            document.getElementById("lyricsPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("lyricsPopup").style.display = "none";
+        }
+
+        // Close the popup when clicking outside of the content
+        window.onclick = function(event) {
+            const popup = document.getElementById("lyricsPopup");
+            if (event.target === popup) {
+                closePopup();
+            }
+        }
+    </script>
+
+</body>
+
+<footer class="rodape" id="contato">
+    <div class="rodape-div">
+
+        <div class="rodape-div-1">
+            <div class="rodape-div-1-coluna">
+                <!-- elemento -->
+                <img alt="Profile shot for Celina Harris" src="img/kpopland.png" width="130">
+                <p>SIA Trecho 5 lote 000 bloco z sala 900 - Guará, Brasília - DF, 70000-010</p>
+            </div>
+        </div>
+
+        <div class="rodape-div-2">
+            <div class="rodape-div-2-coluna">
+                <!-- elemento -->
+                <span><b>Contatos</b></span>
+                <p>contato@na.na</p>
+                <p>+55 63 99200-0000</p>
+            </div>
+        </div>
+
+        <div class="rodape-div-3">
+            <div class="rodape-div-3-coluna">
+                <!-- elemento -->
+                <span><b>Links</b></span>
+                <p><a href="#servicos">Serviços</a></p>
+                <p><a href="#empresa">Empresa</a></p>
+                <p><a href="#sobre">Sobre</a></p>
+            </div>
+        </div>
+
+        <div class="rodape-div-4">
+            <div class="rodape-div-4-coluna">
+                <!-- elemento -->
+                <span><b>Outros</b></span>
+                <p>Políticas de Privacidade</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+
+</html>
+</div>
+</div>
+
+</div>
+
+</footer>
+
+
+</html>
+
+</html>
