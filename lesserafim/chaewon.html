@@ -5,21 +5,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>Conta do Usuário</title>
+  <link rel="icon" type="image/x-icon" href="../img/kpopland.png">
+  <title>KpopLand</title>
   <style>
     body {
-      background: rgb(97, 29, 242);
       background: linear-gradient(90deg, rgba(97, 29, 242, 1) 0%, rgba(110, 26, 232, 1) 35%, rgba(131, 82, 235, 1) 100%);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .container {
+    /* Barra de navegação */
+    #navbar {
+      background-color: #6E1AE8;
+      height: 4%;
+      width: 100%;
       display: flex;
-      background-color: #fff;
-      border-radius: 10px;
+      align-items: center;
+      padding: 0 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-icon {
+      font-size: 35px;
+      color: white;
+      margin-right: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .home-icon:hover {
+      color: #f0f0f0;
+    }
+
+    .logo {
+      width: 160px;
+    }
+
+    /* Container principal */
+    .container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .profile-info {
@@ -28,112 +77,333 @@
     }
 
     .profile-info h2 {
-      margin: 0;
+      font-size: 28px;
+      color: #6E1AE8;
+      margin-bottom: 10px;
     }
 
-    .profile-img {
-      width: 150px;
-      height: 199px;
-
-      object-fit: cover;
-      margin: 20px;
+    .info-panel {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
-    .gallery {
+    .info-panel p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Galeria */
+    h1 {
+      font-size: 32px;
+      color: #ffffff;
+      text-align: center;
+      margin: 40px 0 20px;
+      font-weight: 900;
+      font-size: 2.7rem;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+      /* Container Principal */
+      .container {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        padding: 15px;
+      }}
+      
+      .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
-      margin: 20px auto;
-      background-color: #007BFF;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      background-color: #8c1ccd;
       padding: 20px;
       border-radius: 10px;
       max-width: 800px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
     .gallery img {
       width: 100%;
-      height: 100px;
+      height: 80%;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
     }
 
-    .info-panel {
-      background-color: #e9ecef;
-      border-radius: 5px;
-      padding: 15px;
-      margin-top: 20px;
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
-
-    h1 {
-      text-align: center;
-      color: #007BFF;
-    }
-
-    /* #navbar {
-      background-color: #6E1AE8;
-      height: 4%;
+    /* Novo Estilo para Galeria */
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      display: flex;
-    } */
-
-    #navbar {
-      background-color: #6E1AE8;
-      height: 4%;
-      display: flex;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
       align-items: center;
+      justify-content: center;
+      z-index: 2000;
     }
 
-    .home-icon {
-      font-size: 50px;
-      /* Tamanho do ícone */
-      color: black;
-      /* Cor do ícone */
-      text-decoration: none;
-      /* Remove o sublinhado */
-      margin-right: 10px;
-      /* Espaçamento entre o ícone e a logo */
+    .lightbox.active {
+      display: flex;
     }
 
-    .home-icon:hover {
-      color: gray;
-      /* Cor ao passar o mouse */
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
     }
 
-    .logo {
-      width: 180px;
-      /* Largura da logo */
+    .lightbox.close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s ease;
     }
+
+    .lightbox.close:hover {
+      color: #ddd;
+    }
+    @media (max-width: 600px) {
+      /* Container Principal */
+      .container {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        padding: 15px;
+      }}
+
+    /* Responsividade para Galeria */
+    @media (max-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+    }
+
+    @media (max-width: 992px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 8px;
+        padding: 10px;
+      }
+
+      .gallery img {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    
+.rodape {
+    background-color: #611DF2;
+    color: white;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    font-family: helvetica;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: white;
+}
+
+.rodape p {
+    margin-bottom: 5px;
+}
+
+.rodape-div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    align-items: stretch;
+    padding: 60px 10px 40px 10px;
+}
+
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+    display: flex;
+    width: calc(100% / 4 - 20px);
+    padding: 10px;
+}
+
+.rodape span {
+    font-size: 20px;
+    color: white;
+}
+
+.rodape-direitos {
+    width: calc(100% - 20px);
+    background-color: black;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: calc(50% - 20px);
+        padding: 10px;
+    }
+
+    .rodape-div {
+        padding: 60px 0px 40px 0px;
+    }
+}
+
   </style>
 </head>
 
 <body>
 
+  <!-- Navbar -->
   <div id="navbar">
-    <a href="../index.html"><img alt="Profile shot for Celina Harris" src="../img/kpopland.png" class="logo"></a>
-    <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
-  </div><br>
+    <a href="../index.html"><img alt="Logo" src="../img/kpopland.png" class="logo"></a>
+    <a href="../lesserafim.html" class="home-icon"><i class="fas fa-home"></i></a>
+  </div>
 
+  <!-- Perfil do usuário -->
   <div class="container">
     <img src="../img/chaewon.jpg" alt="Foto de Perfil" class="profile-img">
     <div class="profile-info">
       <h2>Chaewon</h2>
       <div class="info-panel">
-        <p>Email: usuario@exemplo.com</p>
-        <p>Telefone: (00) 12345-6789</p>
-        <p>Endereço: Rua Exemplo, 123</p>
-        <p>Data de Nascimento: 01/01/1990</p>
+        <p>Nome completo: Kim Chae-won</p>
+        <p>Aniversário: 1 de agosto de 2000</p>
+        <p>Idade: 24 anos de idade</p>
+        <p>Tipo sanguíneo: B</p>
+        <p>Signo do zodíaco: Leão</p>
       </div>
     </div>
   </div>
 
+  <!-- Galeria -->
   <h1>Galeria</h1>
   <div class="gallery">
-    <img src="../img/chaewon.jpg" alt="Imagem 1">
-    <img src="../img/chaewon.jpg" alt="Imagem 2">
-    <img src="../img/chaewon.jpg" alt="Imagem 3">
-    <img src="../img/chaewon.jpg" alt="Imagem 4">
-    <img src="../img/chaewon.jpg" alt="Imagem 5">
+    <img src="https://i.pinimg.com/736x/1e/82/88/1e8288bf58c9c002f57ea6703d8bf5f6.jpg" alt="Chaewon sorrindo" loading="lazy">
+    <img src="https://i.pinimg.com/736x/1a/02/84/1a02848bcba3125c873b6ae47c05ecf6.jpg" alt="Chaewon sorrindo" loading="lazy">
+    <img src="https://i.pinimg.com/736x/d7/38/72/d7387258c659af3a835b8e4c596fa96c.jpg" alt="Chaewon sorrindo" loading="lazy">
+    <img src="https://i.pinimg.com/736x/41/04/44/41044496261b398f0a2329ab794f0319.jpg" alt="Chaewon em backstage" loading="lazy">
+    <img src="https://i.pinimg.com/736x/63/0f/22/630f224b7d819935e8e91f3a82f1815d.jpg" alt="Chaewon com fãs" loading="lazy">
+    <img src="https://i.pinimg.com/736x/32/ac/c7/32acc761e8ef7ef740f2b62a035887e5.jpg" alt="Chaewon com fãs" loading="lazy">
+    <img src="https://i.pinimg.com/736x/48/02/4a/48024a1c1eb9de5cdda2dcf41c39b2b6.jpg" alt="Chaewon com fãs" loading="lazy">
+    <img src="https://i.pinimg.com/736x/06/aa/b9/06aab9b9df618503780720279d29dc65.jpg" alt="Chaewon com fãs" loading="lazy">
+    <!-- Adicione mais imagens conforme necessário -->
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="close">&times;</span>
+    <img src="" alt="Imagem ampliada" id="lightbox-img">
+  </div>
+
+  <script>
+    // JavaScript para funcionalidade do Lightbox
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(image => {
+      image.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+    });
+
+    // Fechar lightbox ao clicar fora da imagem
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg && e.target !== closeBtn) {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      }
+    });
+  </script>
+
+<br>
+<footer class="rodape" id="contato">
+  <div class="rodape-div">
+
+      <div class="rodape-div-1">
+          <div class="rodape-div-1-coluna">
+              <!-- elemento -->
+              <img src="../img/kpopland.png" width="130">
+              <p>SIA Trecho 5 lote 000 bloco z sala 900 - Guará, Brasília - DF, 70000-010</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-2">
+          <div class="rodape-div-2-coluna">
+              <!-- elemento -->
+              <span><b>Contatos</b></span>
+              <p>contato@na.na</p>
+              <p>+55 63 99200-0000</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-3">
+          <div class="rodape-div-3-coluna">
+              <!-- elemento -->
+              <span><b>Links</b></span>
+              <p><a href="#servicos">Serviços</a></p>
+              <p><a href="#empresa">Empresa</a></p>
+              <p><a href="..\sobre.html">Sobre</a></p>
+          </div>
+      </div>
+
+      <div class="rodape-div-4">
+          <div class="rodape-div-4-coluna">
+              <!-- elemento -->
+              <span><b>Outros</b></span>
+              <p>Políticas de Privacidade</p>
+          </div>
+      </div>
+
+  </div>
+</footer>
 
 </body>
 

@@ -477,72 +477,67 @@ a:hover {
 /*********************/
 
 
-/* From Uiverse.io by gharsh11032000 */
-
 .albuns {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
-    margin: 1%;
-    position: relative;
-    width: 600px;
-    height: 400px;
-    background-color: #f2f2f2;
+    background-color: white;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    perspective: 1000px;
-    box-shadow: 0 0 0 5px #ffffff80;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 300px; /* Aumenta a largura do card */
+    text-align: center;
+    margin: 20px;
+    
 }
 
-.card img {
-    width: 600px;
-    height: 600px;
-    fill: #333;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.card-img {
+    width: 100%; /* A imagem ocupa 100% da largura do card */
+    height: 300px; /* Define uma altura fixa para a imagem */
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas apenas na parte superior */
+    object-fit: cover; /* A imagem mantém suas proporções e cobre o espaço */
+    padding: 4%;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+.card-title {
+    font-size: 1.5em; /* Tamanho do título */
+    margin: 10px 0;
 }
 
-.card__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f2f2f2;
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.card-text {
+    font-size: 1em; /* Tamanho do texto */
+    margin: 10px 15px;
+    color: #666;
 }
 
-.card:hover .card__content {
-    transform: rotateX(0deg);
+.card-date {
+    display: block;
+    font-size: 0.9em; /* Tamanho da fonte da data */
+    color: #999;
+    margin-bottom: 10px;
 }
 
-.card__title {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-    font-weight: 700;
-}
+@media (max-width: 600px) {
+    .albuns {
+        flex-direction: column; /* Muda a direção do flex para coluna em telas menores */
+        align-items: center; /* Centraliza os cards */
+    }
 
-.card:hover svg {
-    scale: 0;
+    .card {
+        width: 90%; /* Ajusta a largura do card em telas menores */
+    }
 }
+h3{
+    font-family: "Unlock", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+    color: #AC99F2;
 
-.card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
+    background-color: #f0f8ff; /* Cor de fundo */
+    border-radius: 8px;
+    padding: 10px 15px; /* Espaçamento interno */
 }

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/kpopland.png">
+  <link href="wooyoung.css" rel="stylesheet">
+  <title>KpopLand</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar">
+    <a href="../index.html"><img alt="Logo" src="../img/kpopland.png" class="logo"></a>
+    <a href="../ateez.html" class="home-icon"><i class="fas fa-home"></i></a>
+  </div>
+
+  <!-- Perfil do usuário -->
+  <div class="container">
+    <img src="https://i.pinimg.com/474x/4b/bc/75/4bbc75984256c8604d63723d36536458.jpg" alt="Foto de Perfil" class="profile-img">
+    <div class="profile-info">
+      <h2>Wooyoung</h2>
+      <div class="info-panel">
+        <p>Nome completo: Kim Chae-won</p>
+        <p>Aniversário: 1 de agosto de 2000</p>
+        <p>Idade: 24 anos de idade</p>
+        <p>Tipo sanguíneo: B</p>
+        <p>Signo do zodíaco: Leão</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galeria -->
+  <h1>Galeria</h1>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/474x/82/86/f2/8286f23d5330147f05d2d72d6c4a67ff.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/474x/f6/c3/1b/f6c31b77f3fe45b50df16f1f4a989d0c.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/236x/52/d1/bd/52d1bdf0ccbae4cf22d9319c17b2ab29.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/474x/8a/30/16/8a3016c386ba3fc2211953d3aecfd0df.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/474x/cc/de/ed/ccdeed2c63409f8724d51560b4f26e8d.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/236x/39/a9/3b/39a93b0e8892679e4e6dcf9449952658.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/474x/90/61/c0/9061c04e89956117f013777ee8fa69eb.jpg" loading="lazy">
+    <img src="https://i.pinimg.com/474x/38/d1/f0/38d1f0b18b32a7847188cdf21e5299cb.jpg" loading="lazy">
+    <!-- Adicione mais imagens conforme necessário -->
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="close">&times;</span>
+    <img src="" alt="Imagem ampliada" id="lightbox-img">
+  </div>
+
+  <script>
+    // JavaScript para funcionalidade do Lightbox
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(image => {
+      image.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+    });
+
+    // Fechar lightbox ao clicar fora da imagem
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg && e.target !== closeBtn) {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      }
+    });
+  </script>
+
+<br>
+<footer class="rodape" id="contato">
+  <div class="rodape-div">
+
+      <div class="rodape-div-1">
+          <div class="rodape-div-1-coluna">
+              <!-- elemento -->
+              <img src="../img/kpopland.png" width="130">
+              <p>SIA Trecho 5 lote 000 bloco z sala 900 - Guará, Brasília - DF, 70000-010</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-2">
+          <div class="rodape-div-2-coluna">
+              <!-- elemento -->
+              <span><b>Contatos</b></span>
+              <p>contato@na.na</p>
+              <p>+55 63 99200-0000</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-3">
+          <div class="rodape-div-3-coluna">
+              <!-- elemento -->
+              <span><b>Links</b></span>
+              <p><a href="#servicos">Serviços</a></p>
+              <p><a href="#empresa">Empresa</a></p>
+              <p><a href="..\sobre.html">Sobre</a></p>
+          </div>
+      </div>
+
+      <div class="rodape-div-4">
+          <div class="rodape-div-4-coluna">
+              <!-- elemento -->
+              <span><b>Outros</b></span>
+              <p>Políticas de Privacidade</p>
+          </div>
+      </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

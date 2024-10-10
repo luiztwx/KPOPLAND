@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <style>
+        body {
+    background: rgb(97, 29, 242);
+    background: linear-gradient(90deg, rgba(97, 29, 242, 1) 0%, rgba(110, 26, 232, 1) 35%, rgba(131, 82, 235, 1) 100%);
+}
+        .espaco{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quadro {
+            background-color: white;
+            border-radius: 15px; /* Bordas arredondadas */
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .foto {
+            border-radius: 50%; /* Para deixar a foto redonda */
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .botao-bolo {
+            background-color: #ffcc00; /* Cor do botão em formato de bolo */
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .botao-bolo:hover {
+            background-color: #ffdb4d; /* Cor ao passar o mouse */
+        }
+        #navbar {
+    background-color: #6E1AE8;
+    height: 4%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+    
+.rodape {
+    background-color: #611DF2;
+    color: white;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    font-family: helvetica;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: white;
+}
+
+.rodape p {
+    margin-bottom: 5px;
+}
+
+.rodape-div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    align-items: stretch;
+    padding: 60px 10px 40px 10px;
+}
+
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+    display: flex;
+    width: calc(100% / 4 - 20px);
+    padding: 10px;
+}
+
+.rodape span {
+    font-size: 20px;
+    color: white;
+}
+
+.rodape-direitos {
+    width: calc(100% - 20px);
+    background-color: black;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: calc(50% - 20px);
+        padding: 10px;
+    }
+
+    .rodape-div {
+        padding: 60px 0px 40px 0px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <a href="index.html"><img alt="Profile shot for Celina Harris" src="img/kpopland.png" width="140"></a>
+    </div>
+
+    <div class="espaco"> 
+    <div class="quadro">
+        <img src="img/luizz.jpeg" alt="Foto do Criador" class="foto"> <!-- Substitua pelo caminho da sua imagem -->
+        <h2>Sobre o Criador</h2>
+        <p>Olá! Eu sou Luiz Fernando, e sou aluno da Etec Prof. ALfredo de Barros Santos. Atualmente curso Desenvolvimento de Sistemas e aprendi a desenvolver
+            e criar sites. E com muito esforço e dedicação eu criei este sobre diversos grupos de kpop, um gênero musical que eu gosto muito. 
+        </p>
+        <button class="botao-bolo" onclick="window.location.href='./jogo/jogo.html'">Jogar</button> <!-- Substitua 'jogo.html' pela sua página de jogo -->
+    </div>
+    </div>
+
+    <br>
+<footer class="rodape" id="contato">
+    <div class="rodape-div">
+
+        <div class="rodape-div-1">
+            <div class="rodape-div-1-coluna">
+                <!-- elemento -->
+                <img src="img/kpopland.png" width="130">
+                <p>SIA Trecho 5 lote 000 bloco z sala 900 - Guará, Brasília - DF, 70000-010</p>
+            </div>
+        </div>
+
+        <div class="rodape-div-2">
+            <div class="rodape-div-2-coluna">
+                <!-- elemento -->
+                <span><b>Contatos</b></span>
+                <p>contato@na.na</p>
+                <p>+55 63 99200-0000</p>
+            </div>
+        </div>
+
+        <div class="rodape-div-3">
+            <div class="rodape-div-3-coluna">
+                <!-- elemento -->
+                <span><b>Links</b></span>
+                <p><a href="#servicos">Serviços</a></p>
+                <p><a href="#empresa">Empresa</a></p>
+                <p><a href="sobre.html">Sobre</a></p>
+            </div>
+        </div>
+
+        <div class="rodape-div-4">
+            <div class="rodape-div-4-coluna">
+                <!-- elemento -->
+                <span><b>Outros</b></span>
+                <p>Políticas de Privacidade</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
