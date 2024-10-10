@@ -8,6 +8,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="aespa.css" rel="stylesheet">
     <title>aespa</title>
+    <style>
+      .popup {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.8);
+      }
+      
+      .popup-content {
+          background-color: #121212;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+          max-width: 600px;
+          color: #f5f5f5;
+      }
+      
+      .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+          color: white;
+          text-decoration: none;
+          cursor: pointer;
+      }
+      
+      .lyrics {
+          max-width: 100%;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      }
+      
+      .highlight {
+          color: #ff4d4d;
+          font-weight: bold;
+      }
+  </style>
 </head>
 <body>
 
@@ -31,7 +81,7 @@
             <li>
               <a href="#"  class="profile" style="text-decoration: none;">
                 <h2 class="profile__name">Winter</h2>
-                <p>Lead vocalist, lead dancer e visual</p>
+                <p>Lead vocalist, lead dancer</p>
                 <img alt="Profile shot for Celina Harris" src="https://i.pinimg.com/736x/5a/f3/ea/5af3eadf20207530f25f886934742f6c.jpg" />
               </a>
             </li>
@@ -54,38 +104,548 @@
       </article>
 
     </div>
+
+    <div id="lyricsPopup" class="popup">
+      <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <h1 id="popupTitle">Título da Música</h1>
+          <div class="lyrics" id="popupLyrics">
+              <!-- Letras serão injetadas aqui -->
+          </div>
+      </div>
+  </div>
+
+  <h3>Músicas</h3>
+  <div class="musicas">
+      <div class="player" id="music1">
+          <div class="imgbox">
+              <img src="https://i.pinimg.com/474x/9c/15/67/9c15671a120e074b525836143f5f0f8e.jpg" alt="lesserafim">
+          </div>
+          <h4 class="unlock-regular" style="color: blueviolet;">Drama</h4>
+          <audio src="musicas/Drama.mp3" type="audio/mp3" controls></audio>
+          <div id="botao">
+              <button class="boton-elegante" onclick="openPopup('Drama', document.getElementById('lyrics1').innerHTML)">Letra</button>
+          </div>
+      </div>
+
+      <div class="player2" id="music2">
+          <div class="imgbox">
+              <img src="https://i.pinimg.com/474x/fa/e3/ae/fae3ae2cf526c63b01701a5b4d3a5ac0.jpg" alt="lesserafim">
+          </div>
+          <h4 class="unlock-regular" style="color: blueviolet;">Supernova</h4>
+          <audio src="musicas/Supernova.mp3" type="audio/mp3" controls></audio>
+          <div id="botao">
+              <button class="boton-elegante" onclick="openPopup('Supernova', document.getElementById('lyrics2').innerHTML)">Letra</button>
+          </div>
+      </div>
+
+      <div class="player3" id="music3">
+          <div class="imgbox">
+              <img src="https://i.pinimg.com/474x/04/fe/da/04fedacf4fb19f0ffe172b5dd704661c.jpg" alt="lesserafim">
+          </div>
+          <h4 class="unlock-regular" style="color: blueviolet;">Armageddon</h4>
+          <audio src="musicas/Armageddon.mp3" type="audio/mp3" controls></audio>
+          <div id="botao">
+              <button class="boton-elegante" onclick="openPopup('Armageddon', document.getElementById('lyrics3').innerHTML)">Letra</button>
+          </div>
+      </div>
+
+      <div class="player3" id="music4">
+          <div class="imgbox">
+              <img src="https://i.pinimg.com/236x/f5/8b/3e/f58b3e1e02812a4c43b7b414e298b202.jpg" alt="lesserafim">
+          </div>
+          <h4 class="unlock-regular" style="color: blueviolet;">Black Mamba</h4>
+          <audio src="musicas/BlackMamba.mp3" type="audio/mp3" controls></audio>
+          <div id="botao">
+              <button class="boton-elegante" onclick="openPopup('Black Mamba', document.getElementById('lyrics4').innerHTML)">Letra</button>
+          </div>
+      </div>
+  </div>
+
+  <h3>Albuns</h3>
+
+
+  <div class="albuns">
+      <div class="card">
+          <img src="https://i.scdn.co/image/ab67616d0000b273d8cc2281fcd4519ca020926b" alt="Imagem da Notícia" class="card-img">
+          <h2 class="card-title">Savage - The 1st Mini Album</h2>
+          <p class="card-text">È o primeiro mini-álbum do grupo feminino sul-coreano aespa, lançado em 5 de outubro de 2021 pela SM Entertainment. </p>
+          <span class="card-date">10 de Outubro de 2024</span>
+      </div>
+
+      <div class="card">
+          <img src="https://i.scdn.co/image/ab67616d0000b27304878afb19613a94d37b29ce" alt="Imagem da Notícia" class="card-img">
+          <h2 class="card-title">MY WORLD</h2>
+          <p class="card-text"> Foi lançado pela SM Entertainment em 8 de maio de 2023 e contém seis faixas, incluindo o single de pré-lançamento "Welcome to My World"</p>
+          <span class="card-date">10 de Outubro de 2024</span>
+      </div>
+
+      <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReyuftQkBGb4ZcDu4tpHiiWbqyh8ZyCaapjg&s" alt="Imagem da Notícia" class="card-img">
+          <h2 class="card-title">Girls</h2>
+          <p class="card-text">È o segundo extended play do girl group sul-coreano Aespa. O EP foi lançado pela SM Entertainment e Warner Records em 8 de julho de 2022.</p>
+          <span class="card-date">10 de Outubro de 2024</span>
+      </div>
+
+      <div class="card">
+          <img src="https://i.scdn.co/image/ab67616d0000b273c54e39f2ae0dd10731f93c08" alt="Imagem da Notícia" class="card-img">
+          <h2 class="card-title">Drama</h2>
+          <p class="card-text">Drama é o quarto extended play do girl group sul-coreano Aespa. Foi lançado pela SM Entertainment em 10 de novembro de 2023.</p>
+          <span class="card-date">10 de Outubro de 2024</span>
+      </div> 
+
+      <div class="card">
+          <img src="https://i.scdn.co/image/ab67616d0000b273090cfa22962b115ac530674c" alt="Imagem da Notícia" class="card-img">
+          <h2 class="card-title">Armageddon</h2>
+          <p class="card-text"> Foi lançado pela SM em 27 de maio de 2024 e contém dez faixas, incluindo dois singles principais, "Supernova" e "Armageddon".</p>
+          <span class="card-date">10 de Outubro de 2024</span>
+      </div>
+  </div>
+
+  <div style="display: none;">
+    <div id="lyrics1">
+      <p>Ya Ya I’m the Drama</p>
+<p>Ziggy ziggy zag I’m new</p>
+<p>‘Cause I go biggie biggie bad It’s true</p>
+<p>날카로운 눈 안에 비친 Toxic</p>
+<p>내 본능을 당겨 Zoom</p>
+<p>Hold up, What? Oh my god</p>
+<p>You say, What? 다쳐 넌</p>
+<p>You better watch out</p>
+<p>우린 이미 거센 Boom</p>
+<p>달려가고 있어 Vroom</p>
+
+<p>I li-li like me when I roll (Hey)</p>
+<p>Li-li-like me when I’m savage (Wuh)</p>
+<p>Li-li-like me when I go</p>
+<p>Li-li-likie when I baddest (Uh huh)</p>
+<p>Hold up 빛을 따라서 (Mmm)</p>
+<p>달아 다 다 달려나가 Run</p>
+<p>Go Finally Ra ta ta ta</p>
+<p>다음 세계를 열어 난 (Ya ya wuh)</p>
+
+<p>1, 2 It’s time to go</p>
+<p>후회 없어 난</p>
+<p>맞서 난 깨버렸지</p>
+<p>날 따라서 움직일 Rules</p>
+<p>손끝으로 세상을 두드려 움직여</p>
+<p>Yeah I’m coming</p>
+
+<p>I bring I bring all the</p>
+<p>Drama-ma-ma-ma</p>
+<p>I bring Drama-ma-ma-ma</p>
+<p>With my girls in the back</p>
+<p>Girls in the back</p>
+<p>Drama</p>
+<p>Trauma-ma-ma-ma</p>
+<p>I break Trauma-ma-ma-ma</p>
+<p>With MY WORLD in the back</p>
+<p>나로 시작되는 Drama</p>
+
+<p>(All that) Drama-ma-ma-ma</p>
+<p>(Bring it that) Drama-ma-ma-ma</p>
+<p>With my girls in the back</p>
+<p>Girls in the back Yeah</p>
+<p>(I break) Trauma-ma-ma-ma</p>
+<p>(We them) Trauma-ma-ma-ma</p>
+<p>With MY WORLD in the back</p>
+<p>나로 시작되는 Drama</p>
+
+<p>Drama-ma-ma-ma</p>
+<p>Drama-ma-ma-ma (3, 2, 1)</p>
+<p>Drama-ma-ma</p>
+<p>You know I’ve been kind of like</p>
+
+<p>1, 2, 3 깜짝 놀랄 다음 Scene</p>
+<p>키를 거머쥔 주인공은 나</p>
+<p>4, 3, 2 Going down 쉽게 Through</p>
+<p>Deja Vu 같이 그려지는 이미지</p>
+
+<p>날 굳이 막지 말아</p>
+<p>이건 내 Drama</p>
+<p>도발은 굳이 안 막아</p>
+<p>Uh I’m a stunner</p>
+
+<p>1, 2 It’s time to go</p>
+<p>타오르는 날 (타는 날)</p>
+<p>느껴 난 And I love it</p>
+<p>새로워지는 Rules</p>
+<p>난 눈을 떠 (두 눈을 떠)</p>
+<p>시작된 걸 (넌) 알아 (Now)</p>
+<p>It’s coming</p>
+
+<p>I bring I bring all the</p>
+<p>Drama-ma-ma-ma</p>
+<p>I bring Drama-ma-ma-ma</p>
+<p>With my girls in the back</p>
+<p>Girls in the back</p>
+<p>Drama</p>
+<p>Trauma-ma-ma-ma</p>
+<p>I break Trauma-ma-ma-ma</p>
+<p>With MY WORLD in the back</p>
+<p>나로 시작되는 Drama</p>
+
+<p>Into the REAL WORLD</p>
+<p>다가온 Climax (Oh whoa)</p>
+<p>두려워하지 마 (Oh)</p>
+<p>You and I (No yeah)</p>
+<p>함께 써 내려가는 Story (Story yeah)</p>
+<p>날 가로막았던 No (No)</p>
+<p>한계를 뛰어 넘어 Every day (Oh)</p>
+<p>Oh Imma make it my way</p>
+<p>Out of the way yeah (Oh yeah)</p>
+
+<p>I bring I bring all the</p>
+<p>Drama-ma-ma-ma</p>
+<p>I bring Drama-ma-ma-ma (Oh whoa)</p>
+<p>With my girls in the back</p>
+<p>Girls in the back</p>
+<p>Drama</p>
+<p>Trauma-ma-ma-ma (Drama-ma-ma)</p>
+<p>I break Trauma-ma-ma-ma (Drama-ma-ma)</p>
+<p>With MY WORLD in the back (With MY WORLD Yeah)</p>
+<p>나와 함께하는 Drama (All that)</p>
+
+<p>You know, I’m savage</p>
+<p>거침없는 Baddest</p>
+<p>나를 둘러싼 Thrill</p>
+<p>거친 여정 속의</p>
+
+<p>Drama (Drama-ma-ma)</p>
+<p>내가 깨트릴 모든 Trauma (Drama-ma-ma)</p>
+<p>지금 시작되는 Drama</p>
+
+<p>Ya Ya</p>
+<p>[윈/닝] 너로 시작될 MY Drama</p>
+    </div>
+
+    <div id="lyrics2">
+      <p>I’m like some kind of Supernova</p>
+<p>Watch out</p>
+
+<p>Look at me go</p>
+<p>재미 좀 볼</p>
+<p>빛의 Core</p>
+<p>So hot hot</p>
+<p>문이 열려</p>
+<p>서로의 존재를 느껴</p>
+<p>마치 Discord</p>
+<p>날 닮은 너 너 누구야 (Drop)</p>
+
+<p>사건은 다가와 Ah oh ay</p>
+<p>거세게 커져가 Ah oh ay</p>
+<p>That tick that tick tick bomb</p>
+<p>That tick that tick tick bomb</p>
+<p>감히 건드리지 못할 걸 (누구도 말이야)</p>
+<p>지금 내 안에선</p>
+<p>Su su su Supernova</p>
+
+<p>Nova</p>
+<p>Can’t stop hyperstellar</p>
+<p>원초 그걸 찾아</p>
+<p>Bring the light of a dying star</p>
+<p>불러낸 내 우주를 봐 봐</p>
+<p>Supernova</p>
+
+<p>Ah body bang</p>
+<p>Make it feel too right</p>
+
+<p>휩쓸린 에너지 It’s so special</p>
+<p>잔인한 Queen 이며 Scene 이자 종결</p>
+<p>이토록 거대한 내 안의 Explosion</p>
+<p>내 모든 세포 별로부터 만들어져</p>
+<p>(Under my control ah)</p>
+
+<p>질문은 계속돼 Ah oh ay</p>
+<p>우린 어디서 왔나 Oh ay</p>
+<p>느껴 내 안에선 (Ha)</p>
+<p>Su su su Supernova</p>
+
+<p>Nova</p>
+<p>Can’t stop hyperstellar</p>
+<p>원초 그걸 찾아</p>
+<p>Bring the light of a dying star</p>
+<p>불러낸 내 우주를 봐 봐</p>
+<p>Supernova</p>
+
+<p>보이지 않는 힘으로</p>
+<p>네게 손 내밀어 볼까</p>
+<p>가능한 모든 가능성</p>
+<p>무한 속의 너를 만나</p>
+<p>It’s about to bang bang</p>
+<p>Don’t forget my name</p>
+<p>Su su su Supernova</p>
+
+<p>사건은 다가와 Ah oh ay</p>
+<p>거세게 커져가 Ah oh ay</p>
+<p>질문은 계속돼 Ah oh ay</p>
+<p>우린 어디서 왔나 Oh ay</p>
+
+<p>사건은 다가와 Ah oh ay</p>
+<p>거세게 커져가 Ah oh ay</p>
+<p>Tell me, tell me, tell me Oh ay</p>
+<p>우린 어디서 왔나 Oh ay</p>
+<p>우린 어디서 왔나 Oh ay</p>
+
+<p>Nova (Nova)</p>
+<p>Can’t stop hyperstellar (Hyperstellar)</p>
+<p>원초 그걸 찾아</p>
+<p>Bring the light of a dying star</p>
+<p>(Bring the light of a dying star)</p>
+<p>불러낸 내 우주를 봐 봐 (All the way)</p>
+<p>Supernova (Hey, ha)</p>
+
+<p>사건은 다가와 Ah oh ay (Nu star)</p>
+<p>거세게 커져가 Ah oh ay</p>
+<p>질문은 계속돼 Ah oh ay (Nova)</p>
+<p>우린 어디서 왔나 Oh ay</p>
+
+<p>사건은 다가와 Ah oh ay (Yeah yeah yeah yeah)</p>
+<p>거세게 커져가 Ah oh ay</p>
+<p>질문은 계속돼 Ah oh ay (Nova)</p>
+<p>[카/닝] Bring the light of a dying star</p>
+<p>Supernova</p>
+    </div>
+
+    <div id="lyrics3">
+      <p>Armageddon</p>
+<p>Shoot</p>
+<p>Imma get ’em</p>
+<p>Shoot</p>
+
+<p>Watch Uh (Ey)</p>
+<p>Imma bite back Uh</p>
+<p>짙은 어둠이 막아설 땐 Uh</p>
+<p>한 걸음 앞으로 날아든 It’s bad</p>
+<p>사라진 Feedback 시작된 Code black Uh</p>
+
+<p>깊어가 혼란스러운 밤</p>
+<p>악몽은 또 짙게 번져가</p>
+<p>뭔갈 숨기려고 해</p>
+<p>I got it, I got it</p>
+<p>혼돈을 타고 덮쳐 Killing like</p>
+
+<p>Bang chitty bang</p>
+<p>Bang chitty bang bang</p>
+<p>’Cause I wanna see</p>
+<p>I wanna see truly</p>
+<p>Bang chitty bang</p>
+<p>Bang chitty bang bang</p>
+<p>내게 다가와 다가와</p>
+<p>Imma get it</p>
+
+<p>Done</p>
+<p>(Aw wayo wayo)</p>
+<p>널 향해 겨눠 Get it, gone</p>
+<p>(Aw wayo wayo)</p>
+<p>이젠 널 끝내 Better run</p>
+<p>(끝을 모르는 너와 나</p>
+<p>You gonna, gonna)</p>
+<p>깨트려 거침없이 Done</p>
+<p>(Go way up, way up)</p>
+<p>Full shot pull it up Armageddon</p>
+
+<p>Imma get ’em</p>
+<p>Shoot</p>
+<p>Imma get ’em</p>
+
+<p>Hey ya 또 다른 나</p>
+<p>우릴 막지 마 We never play nice</p>
+<p>Shoot</p>
+
+<p>완벽한 Pair 넌 똑같은 Soul</p>
+<p>Three to get ready 우린 Shoot and go</p>
+<p>겁 없이 누벼</p>
+<p>날 이끄는 Way</p>
+
+<p>Bang chitty bang</p>
+<p>Bang chitty bang bang</p>
+<p>Yes I’m gonna see</p>
+<p>I’m gonna see, want it</p>
+<p>Bang chitty bang</p>
+<p>Bang chitty bang bang</p>
+<p>답이 들려와 들려와</p>
+<p>Imma get it</p>
+
+<p>Done</p>
+<p>(Aw wayo wayo)</p>
+<p>널 향해 겨눠 Get it, gone</p>
+<p>(Aw wayo wayo)</p>
+<p>이젠 널 끝내 Better run</p>
+<p>(끝을 모르는 너와 나</p>
+<p>You gonna, gonna)</p>
+<p>깨트려 거침없이 Done</p>
+<p>(Go way up, way up)</p>
+<p>Full shot pull it up Armageddon</p>
+
+<p>Imma get ’em</p>
+
+<p>또 어둠을 몰아내고</p>
+<p>시작을 꽃피운 너와 나의 Story</p>
+<p>더 완벽해진 우리</p>
+<p>(Armageddon)</p>
+<p>정의해 이젠 나만의 Complete</p>
+<p>내 모든 걸 이끌어 Do it all myself</p>
+<p>완전한 나를 이뤄내</p>
+
+<p>(Drop)</p>
+<p>Throw it back, throw it back, throw it back</p>
+<p>Born like a queen</p>
+<p>Born like a king Ya</p>
+<p>Throw it back, throw it back, throw it back</p>
+<p>불러</p>
+<p>Imma get ’em</p>
+
+<p>Done (Done yeah)</p>
+<p>(Aw wayo wayo)</p>
+<p>[윈/닝] 널 향해 겨눠 Get it, gone</p>
+<p>(Aw wayo wayo)</p>
+<p>이젠 널 끝내 Better run (Better run)</p>
+<p>(끝을 모르는 너와 나</p>
+<p>You gonna, gonna)</p>
+<p>[카/닝] 깨트려 거침없이 Done</p>
+<p>(Go way up, way up)</p>
+<p>[지/윈] Full shot pull it up Armageddon</p>
+
+<p>Armageddon</p>
+<p>(Aw wayo wayo wayo</p>
+<p>Warning all night long)</p>
+<p>Armageddon</p>
+<p>(Aw wayo wayo)</p>
+<p>끝과 시작의</p>
+<p>Armageddon</p>
+    </div>
+
+    <div id="lyrics4">
+      <p>I’m addicted 끊임없이</p>
+<p>말을 걸어주는 나의 에스파</p>
+<p>이런 교감, 너의 존잰 날</p>
+<p>다른 차원으로 이끌었지</p>
+
+<p>난 세상 중심에</p>
+<p>You’re in the FLAT</p>
+<p>내 모든 Action</p>
+<p>어린 너의 힘을 키워</p>
+
+<p>넌 언젠가부터 SYNK out</p>
+<p>노이즈같이 보여</p>
+<p>더 이상 못 찾겠어</p>
+<p>널 유혹해 삼킨 건</p>
+<p>Black Mamba</p>
+
+<p>Ma Ma Ma Mamba</p>
+<p>Woo oh-oh</p>
+<p>Ma Ma Ma Mamba</p>
+<p>Oh eh-o eh-o</p>
+
+<p>넌 광야를 떠돌고 있어</p>
+<p>(Aya ya ya ya ya ya)</p>
+<p>나의 분신을 찾고 싶어</p>
+<p>(Aya ya ya ya ya ya)</p>
+<p>Hey Ma Mamba</p>
+
+<p>I hate Ma Ma Ma Mamba</p>
+<p>Hate Ma Ma Ma Mamba</p>
+
+<p>I’m ejected 선함 만으론</p>
+<p>너의 거대함을 이기지 못해</p>
+<p>I’m exhausted 너의 존잰 모든</p>
+<p>[지/윈] 탐욕들을 먹고 자라 났지</p>
+
+<p>에스파는 나야</p>
+<p>둘이 될 수 없어</p>
+<p>Monochrome to colors</p>
+<p>이건 Evo, Evolution</p>
+
+<p>Oh! 위험한 장난을 쳐</p>
+<p>매혹적이지만 널</p>
+<p>부정할 밖에</p>
+<p>모든 걸 삼켜버릴</p>
+<p>Black Mamba</p>
+
+<p>Ma Ma Ma Mamba</p>
+<p>Woo oh-oh</p>
+<p>Ma Ma Ma Mamba</p>
+<p>Oh eh-o eh-o</p>
+
+<p>넌 광야를 떠돌고 있어</p>
+<p>(Aya ya ya ya ya ya)</p>
+<p>네게 맞서 난 질 수 없어</p>
+<p>(Aya ya ya ya ya ya)</p>
+<p>Hey Ma Mamba</p>
+
+<p>거울 속의 나는 네가 아닐까?</p>
+<p>일그러져버린 환영인 걸까?</p>
+<p>다시 너와 연결될 수 있다면</p>
+<p>너를 만나고 싶어 이제</p>
+<p>모든 걸 삼켜버릴</p>
+<p>Black Mamba</p>
+
+<p>Ma Ma Ma Mamba</p>
+<p>Woo oh-oh</p>
+<p>Ma Ma Ma Mamba</p>
+<p>Oh eh-o eh-o</p>
+
+<p>넌 광야를 떠돌고 있어</p>
+<p>(Aya ya ya ya ya ya)</p>
+<p>네게 맞서 난 질 수 없어</p>
+<p>(Aya ya ya ya ya ya)</p>
+<p>Hey Ma Mamba</p>
+
+    </div>
+  </div>
+
+  <script>
+    function openPopup(title, lyrics) {
+        document.getElementById("popupTitle").innerText = title;
+        document.getElementById("popupLyrics").innerHTML = lyrics;
+        document.getElementById("lyricsPopup").style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("lyricsPopup").style.display = "none";
+    }
+
+    // Close the popup when clicking outside of the content
+    window.onclick = function(event) {
+        const popup = document.getElementById("lyricsPopup");
+        if (event.target === popup) {
+            closePopup();
+        }
+    }
+</script>
      
 </body>
 
 <footer class="rodape" id="contato">
   <div class="rodape-div">
 
-      <div class="rodape-div-1">
-          <div class="rodape-div-1-coluna">
-              <!-- elemento -->
-              <img src="img/kpopland.png" width="130">
-              <p>SIA Trecho 5 lote 000 bloco z sala 900 - Guará, Brasília - DF, 70000-010</p>
-          </div>
+    <div class="rodape-div-1">
+      <div class="rodape-div-1-coluna">
+          <!-- elemento -->
+          <img alt="" src="img/kpopland.png" width="130">
+          <p>Feito: Luiz Fernando</p>
       </div>
+  </div>
 
-      <div class="rodape-div-2">
-          <div class="rodape-div-2-coluna">
-              <!-- elemento -->
-              <span><b>Contatos</b></span>
-              <p>contato@na.na</p>
-              <p>+55 63 99200-0000</p>
-          </div>
+  <div class="rodape-div-2">
+      <div class="rodape-div-2-coluna">
+          <!-- elemento -->
+          <span><b>Contatos</b></span>
+          <p>luiz.toledo12@etec.sp.gov.br</p>
+          <p>+55 12 996394245</p>
       </div>
+  </div>
 
-      <div class="rodape-div-3">
-          <div class="rodape-div-3-coluna">
-              <!-- elemento -->
-              <span><b>Links</b></span>
-              <p><a href="#servicos">Serviços</a></p>
-              <p><a href="#empresa">Empresa</a></p>
-              <p><a href="#sobre">Sobre</a></p>
-          </div>
+  <div class="rodape-div-3">
+      <div class="rodape-div-3-coluna">
+          <!-- elemento -->
+          <span><b>Links</b></span>
+          <p><a href="./rodapetelas/redes.html">Redes</a></p>
+          <p><a href="./rodapetelas/duvidas.html">Dúvidas</a></p>
+          <p><a href="sobre.html">Sobre</a></p>
       </div>
+  </div>
 
       <div class="rodape-div-4">
           <div class="rodape-div-4-coluna">

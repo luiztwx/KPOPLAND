@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/kpopland.png">
+    <title>KpopLand - Dúvidas</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(97, 29, 242, 1) 0%, rgba(110, 26, 232, 1) 35%, rgba(131, 82, 235, 1) 100%);
+            margin: 0; 
+        }
+        .body2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #e6e6fa; /* Roxo claro */
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%; /* Ajusta a largura para 90% */
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #5e5e5e;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        p {
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        input, textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px;
+            background-color: #6a5acd; /* Cor roxa */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #483d8b; /* Roxo escuro ao passar o mouse */
+        }
+        #navbar {
+            background-color: #6E1AE8;
+            height: 4%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+          }
+
+            
+.rodape {
+    background-color: #611DF2;
+    color: white;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    font-family: helvetica;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: white;
+}
+
+.rodape p {
+    margin-bottom: 5px;
+}
+
+.rodape-div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    align-items: stretch;
+    padding: 60px 10px 40px 10px;
+}
+
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+    display: flex;
+    width: calc(100% / 4 - 20px);
+    padding: 10px;
+    color: white;
+}
+
+.rodape span {
+    font-size: 20px;
+    color: white;
+}
+
+.rodape-direitos {
+    width: calc(100% - 20px);
+    background-color: black;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: calc(50% - 20px);
+        padding: 10px;
+    }
+
+    .rodape-div {
+        padding: 60px 0px 40px 0px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="../index.html"><img alt="" src="../img/kpopland.png" width="140"></a>
+    </div>
+    <div class="body2">          
+    <div class="container">
+        <h1>Dúvidas sobre o KpopLand</h1>
+        <p>Bem-vindo ao KpopLand! Aqui você pode descobrir tudo sobre o mundo do K-pop, conheça diversos grupos e ouça suas músicas.</p>
+        <p>Se você tiver alguma dúvida ou sugestão, preencha o formulário abaixo e enviaremos sua mensagem para o dono do site.</p>
+        
+        <form id="contactForm">
+            <input type="email" id="email" placeholder="Seu e-mail" required>
+            <textarea id="message" rows="5" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Simulação de envio de e-mail
+            const mailtoLink = `mailto:luiztoledo359@gmail.com?subject=Mensagem do usuário&body=Email: ${email}%0D%0AMensagem: ${message}`;
+            window.location.href = mailtoLink;
+
+            // Limpa o formulário após o envio
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+
+<br>
+<footer class="rodape" id="contato">
+  <div class="rodape-div">
+
+      <div class="rodape-div-1">
+          <div class="rodape-div-1-coluna">
+              <!-- elemento -->
+              <img alt="" src="../img/kpopland.png" width="130">
+              <p>Feito: Luiz Fernando</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-2">
+          <div class="rodape-div-2-coluna">
+              <!-- elemento -->
+              <span><b>Contatos</b></span>
+              <p>luiz.toledo12@etec.sp.gov.br</p>
+              <p>+55 12 996394245</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-3">
+          <div class="rodape-div-3-coluna">
+              <!-- elemento -->
+              <span><b>Links</b></span>
+              <p><a href="../rodapetelas/redes.html">Redes</a></p>
+              <p><a href="../rodapetelas/duvidas.html">Dúvidas</a></p>
+              <p><a href="..\sobre.html">Sobre</a></p>
+          </div>
+      </div>
+
+      <div class="rodape-div-4">
+          <div class="rodape-div-4-coluna">
+              <!-- elemento -->
+              <span><b>Outros</b></span>
+              <p>Políticas de Privacidade</p>
+          </div>
+      </div>
+
+  </div>
+</footer>
+</body>
+</html>

@@ -2,6 +2,10 @@
     background-color: #6E1AE8;
     height: 4%;
     width: 100%;
+    margin: auto;
+}
+body{
+    margin: 0;
 }
 
 * {
@@ -353,7 +357,6 @@ nav ul p button:hover {
     height: auto;
     width: 100%;
     font-size: 14px;
-    font-family: helvetica;
 }
 
 .rodape a {
