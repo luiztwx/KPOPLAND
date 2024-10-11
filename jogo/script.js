@@ -6,7 +6,7 @@ const questions = [
     { id: 1, name: "Winter", image: "https://www.allkpop.com/upload/2024/10/content/061118/1728227880-gzntv9gbuaafbgw.jpg", options: ["Winter", "Karina", "Giselle", "Garam"], correct: "Winter" },
     { id: 2, name: "Jung-kook", image: "https://s2-quem.glbimg.com/BmiEjgYldbMUIT_AI74F68YTl3c=/0x0:1400x1016/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/q/1/YtkV0JRUu0E5poKN7c6w/jungkook.jpg", options: ["Jimin", "Taeyon", "Jung-kook", "Hongjoong"], correct: "Jung-kook" },
     { id: 3, name: "Lisa", image: "https://www.rollingstone.com/wp-content/uploads/2024/06/blackpink-lisa-new-single.jpg?w=1581&h=1054&crop=1", options: ["Rora", "Lisa", "Jisoo", "Yren"], correct: "Lisa" },
-    { id: 4, name: "Chaewon", image: "img/chaewon.jpg", options: ["Yuna", "Chaeryoung", "Rose", "Chaewon"], correct: "Chaewon" },
+    { id: 4, name: "Chaewon", image: "./img/chaewon.jpg", options: ["Yuna", "Chaeryoung", "Rose", "Chaewon"], correct: "Chaewon" },
     { id: 5, name: "San", image: "https://hitmagazine.com.br/wp-content/uploads/2024/07/site-capa-tamanho-certo-19-1.png", options: ["Wooyoung", "Ten", "San", "Seongwha"], correct: "San" },
     { id: 6, name: "Felix", image: "https://cinevibes.com.br/wp-content/uploads/2024/08/2154347937.webp", options: ["Han", "Felix", "Bangchan", "I.N"], correct: "Felix" },
 
