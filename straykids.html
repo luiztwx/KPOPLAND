@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/kpopland.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="ateez.css" rel="stylesheet">
+    <title>Stray Kids</title>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .popup-content {
+            background-color: #121212;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            color: #f5f5f5;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .lyrics {
+            max-width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <a href="index.html"><img alt="Profile shot for Celina Harris" src="img/kpopland.png" width="140"></a>
+        <img alt="" src="https://seeklogo.com/images/S/stray-kids-logo-EFE4020196-seeklogo.com.png" width="140">
+    </div>
+
+    <div class="conteudo">
+        <article class="flow">
+            <h1>Stray Kids</h1>
+            <p>
+                Stray Kids é um grupo masculino sul-coreano formado pela JYP Entertainment. É composto 
+                atualmente por 8 integrantes: Bang Chan, Lee Know, Changbin, Hyunjin, Han, Felix, Seungmin 
+                e I.N. Woojin deixou o grupo por motivos pessoais não revelados em outubro de 2019.
+            </p>
+            <div class="team">
+                <ul class="auto-grid" li-style-type: none>
+                    <li li-style-type: none>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Hyunjin</h2>
+                            <p></p>
+                            <img alt="" src="https://i.pinimg.com/736x/c1/1a/34/c11a34385b427e4b8f66c5574499fcc9.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Felix</h2>
+                            <p></p>
+                            <img alt="" src="https://i.pinimg.com/736x/08/a8/1c/08a81c2a8df2bc7169beaba292a9e18a.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Bang Chan</h2>
+                            <p></p>
+                            <img alt="" src="https://i.pinimg.com/736x/8c/93/18/8c9318d56799469ef00a161381b63d66.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Lee Know</h2>
+                            <p></p>
+                            <img alt="" src="https://i.pinimg.com/736x/90/79/be/9079be190c5b4abf76034bfeb789a355.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Han</h2>
+                            <p></p>
+                            <img alt="San" src="https://pm1.aminoapps.com/9072/65fd127e71ff60919be91e18e89f70e2cbce9b2dr1-1280-1280v2_00.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">I.N</h2>
+                            <p></p>
+                            <img alt="Mingi" src="https://64.media.tumblr.com/53ff186d44f8e922ac9ed41bc59031fa/5e11107161cdf150-a0/s1280x1920/a99c884b19ff6ec8d1cc2890bb0a9c13e8206928.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./ateez/wooyoung.html" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Seung Min</h2>
+                            <p></p>
+                            <img alt="Wooyoung" src="https://i.pinimg.com/736x/86/01/3d/86013daf0c5a16e6ef46d4d501755c6d.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile" style="text-decoration: none;">
+                            <h2 class="profile__name">Changbin</h2>
+                            <p></p>
+                            <img alt="Jongho" src="https://i.pinimg.com/474x/31/5c/47/315c471f578963d411564e9525c4bfc3.jpg" />
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </article>
+
+    </div>
+    <!-- Popup Structure -->
+    <div id="lyricsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h1 id="popupTitle">Título da Música</h1>
+            <div class="lyrics" id="popupLyrics">
+                <!-- Letras serão injetadas aqui -->
+            </div>
+        </div>
+    </div>
+<br>
+    <h3>Músicas</h3>
+
+    <div class="musicas">
+        <div class="player" id="music1">
+            <div class="imgbox">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/3e98bf160535207.63b5fa91c6c87.png" alt="ateez">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Halazia</h4>
+            <audio src="./ateez/halazia.m4a" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Halazia', document.getElementById('lyrics1').innerHTML)">Letra</button>
+            </div>
+        </div>
+
+        <div class="player2" id="music2">
+            <div class="imgbox">
+                <img src="https://i.pinimg.com/originals/26/40/89/2640893cda431c11a9c446166b0125b2.png" alt="lesserafim">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Crazy Form</h4>
+            <audio src="./ateez/crazyform.m4a" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Crazy Form', document.getElementById('lyrics2').innerHTML)">Letra</button>
+            </div>
+        </div>
+
+        <div class="player3" id="music3">
+            <div class="imgbox">
+                <img src="https://i.pinimg.com/736x/69/b4/12/69b4120ae3caa08e46493685f0b521c1.jpg" alt="lesserafim">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Guerrilla</h4>
+            <audio src="./ateez/guerrilla.m4a" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Guerrilla', document.getElementById('lyrics3').innerHTML)">Letra</button>
+            </div>
+        </div>
+
+        <div class="player3" id="music4">
+            <div class="imgbox">
+                <img src="https://ih1.redbubble.net/image.5555111602.3105/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="lesserafim">
+            </div>
+            <h4 class="unlock-regular" style="color: blueviolet;">Work</h4>
+            <audio src="./ateez/work.m4a" type="audio/mp3" controls></audio>
+            <div id="botao">
+                <button class="boton-elegante" onclick="openPopup('Work', document.getElementById('lyrics4').innerHTML)">Letra</button>
+            </div>
+        </div>
+    </div>
+<br>
+    <h3>Albuns</h3>
+
+
+    <div class="albuns">
+        <div class="card">
+            <img src="https://kpopmusictownla.com/cdn/shop/files/ATEEZ-GOLDENHOUR-_-_-BLUE_800x.jpg?v=1714159731" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">Golden Hour: Part.1</h2>
+            <p class="card-text">È o décimo EP da boy band sul-coreana Ateez. Foi lançado em 31 de maio de 2024 pela KQ Entertainment </p>
+            <span class="card-date">03 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b27354f9a62b56465fe3cb6eb7e5" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">The World EP.Fin: Will</h2>
+            <p class="card-text">È o segundo álbum de estúdio em coreano e o quarto álbum de estúdio lançado em 1 de dezembro de 2023 pela KQ Entertainment </p>
+            <span class="card-date">03 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b273ba27e1c8a572e31571a4d589" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">The World EP.2: Outlaw</h2>
+            <p class="card-text">Foi lançado em 16 de junho de 2023 pela KQ Entertainment. É composto por seis faixas, incluindo o single "Bouncy".  </p>
+            <span class="card-date">10 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b2738bc5762a75c18b494803705c" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">Spin Off: From the Witness</h2>
+            <p class="card-text">Foi lançado em 30 de dezembro de 2022, pela KQ Entertainment. O álbum consiste em cinco faixas, incluindo o single principal "Halazia". </p>
+            <span class="card-date">10 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLN10HeUlDnCXB_gq3tiyy8iKfhfspm2ysmQ&s" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">Zero: Fever Part.1</h2>
+            <p class="card-text">Foi lançado em 29 de julho de 2020, com "Inception" e "Thanxx" servindo como singles principais. O álbum físico vem em três versões.</p>
+            <span class="card-date">10 de Outubro de 2024</span>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmuSiyO_A8DsZDjLEoU2IUZWkJo8uWGaW86A&s" alt="Imagem da Notícia" class="card-img">
+            <h2 class="card-title">Treasure EP.1: All to Zero</h2>
+            <p class="card-text">Treasure EP.1: All to Zero é o EP de estreia. Foi lançado em 24 de outubro de 2018, com "Pirate King" e "Treasure"</p>
+            <span class="card-date">10 de Outubro de 2024</span>
+        </div>
+    </div>
+
+
+    <!-- Letras ocultas -->
+    <div style="display: none;">
+        <div id="lyrics1">
+            <p>빛이 되어주오, oh, Halazia</p>
+            <p>Oh, no, 모든 것이 말라가네, hoo, yeah</p>
+            <p>We all try, but we lose emotion</p>
+            <p>점점 잃어 감에 익숙해져 가, 가</p>
+            <p>마비되어 가네</p>
+            <p>묶여 버린 자유 속에 (yeah)</p>
+            <p>내 안에 작은 fantasy</p>
+            <p>Oh, Halazia, Halazia, Halazia</p>
+            <p>듣고 싶어 난 사랑의 숨소리를</p>
+            <p>알고 싶어 난 이대로 괜찮은지?</p>
+            <p>Mmh, 소리를 잃은 작은 파랑새야 (-새야)</p>
+            <p>속삭임이 들려오는구나 (-구나)</p>
+            <p>시작되는 깊은 울림, 세상을 뒤집을 목소리</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (yeah)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia</p>
+            <p>살아있다는 게 뭔지?</p>
+            <p>느낄 수 없어, 난 이 순간에도</p>
+            <p>한없이 차가운 이 세상을 물들여</p>
+            <p>빛이 되어주오, oh, Halazia</p>
+            <p>제발, 숨다운 숨을 쉬게 해주오, 춤다운 춤을 추게 해주오</p>
+            <p>꿈다운 꿈을 꾸게 해주고, 이 모든 감각을 느끼게 해주오</p>
+            <p>사랑 (마저) 삼켜 (버린) 이곳에 (파도를) 일으킬 때</p>
+            <p>영원 영원할 이 움직임</p>
+            <p>Who are you? (Huh) it's just me, myself and I</p>
+            <p>Who are you? (Who?) 거울 속 비친 넌 누구인가?</p>
+            <p>Who are you? (Ayy) 기대 안에 기대 이 길의 뒤에</p>
+            <p>시대와 미래 사이에 난 어디에 있을까?</p>
+            <p>듣고 싶어 난 사랑의 숨소리를 (just tell me, oh)</p>
+            <p>알고 싶어 난 이대로 괜찮은지? (Oh)</p>
+            <p>Mmh, 소리를 잃은 작은 파랑새야 (-새야)</p>
+            <p>속삭임이 들려오는구나 (-구나)</p>
+            <p>시작되는 깊은 울림, 세상을 뒤집을 목소리</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (yeah)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia (ooh)</p>
+            <p>Hala-Hala-Hala-Hala-Halazia</p>
+            <p>살아있다는 게 뭔지?</p>
+            <p>느낄 수 없어, 난 이 순간에도</p>
+            <p>한없이 차가운 이 세상을 물들여</p>
+            <p>빛이 되어주오, oh, Halazia</p>
+            <p>두려움에 가린 진실</p>
+            <p>피어나 저 위로, 선명히 저 위로</p>
+            <p>우린 무얼 위해 이토록 침묵했던 것인가?</p>
+            <p>이건 누구를 위한 어둠 속인가?</p>
+            <p>한 가지 소원을 들어주심 과연 빛을 주실까?</p>
+            <p>차가운 절망 대신 뜨거운 열정을 느끼고 싶어</p>
+            <p>빛이 되어주오, oh, Halazia (no more, keep control)</p>
+            <p>Halazia (no more, keep your soul)</p>
+            <p>Halazia (no more, keep control)</p>
+            <p>Halazia, 어둠을 걷어줘, oh, Halazia</p>
+            <p>빛이 되어주오, oh, Halazia</p>
+            
+        </div>
+        <div id="lyrics2">
+            <p>Get up, get up, get up (Hoo)</p>
+<p>Ninety-two-four, kick that drum</p>
+<p>My ego in this show</p>
+<p>Dallarakkaji, go</p>
+<p>Ya, igeo michin pom</p>
+<p>Ah, yeah, yeah, yeah, chumman chwo</p>
+<p>My ego in this show</p>
+<p>Put 'em up, put 'em up, make 'em run</p>
+<p>Ja, ige michin pom</p>
+
+<p>Fix on</p>
+<p>Michin pomeul ollyeo</p>
+<p>Gajyeowa nae trophy (Trophy)</p>
+<p>Sidong georeo i turbine (Hoo)</p>
+<p>Pull up, the drop beat, taewobeoryeo, pumpin', woah</p>
+<p>O daeryuk da dorabwannya? (Ha)</p>
+<p>Sanghyang jung nae juganeun red light (Cha-cha)</p>
+<p>Nae checken comma, gyesok neoeoga</p>
+<p>Peolleogineun my green flag</p>
+
+<p>Naebeoryeo dwo, I don't mind</p>
+<p>Kkolsanaumyeon, nun gama</p>
+<p>Time is tickin', neomu ppalla</p>
+<p>Can't you see, I'm a warning sign? (Ayy-oh)</p>
+<p>Ije bulleo ttara (Hoo)</p>
+<p>Gyeokage teoreo (Ayy-oh)</p>
+<p>You know I'm fire</p>
+<p>Geunyang mamdaero umjingnyeo, we go up</p>
+
+<p>Ninety-two-four, kick that drum</p>
+<p>My ego in this show</p>
+<p>Dallarakkaji, go</p>
+<p>Ya, igeo michin pom</p>
+<p>Ah, yeah, yeah, yeah, chumman chwo</p>
+<p>My ego in this show</p>
+<p>Put 'em up, put 'em up, make 'em run</p>
+<p>Ja, ige michin pom</p>
+
+<p>Ayy</p>
+<p>Taki, taki</p>
+<p>Dance 'til the sunrise, yeah</p>
+<p>Take it, take it</p>
+<p>Nobody plays like this</p>
+<p>Oh, gatabuta</p>
+<p>Malloman blah, blah, blah, blah</p>
+<p>Heundeureo, body, body</p>
+<p>Watda gatda, step like this</p>
+<p>Crazy boys are getting hwanjang</p>
+<p>Tteotda hamyeon crash, mak yeogijeogi banpa</p>
+<p>Geunbon eomneun jasik nan amman bogo ganda</p>
+<p>Michyeoitji passion, ambitione tensioneun jeo sesangeuro</p>
+<p>Bulgasaui gateun nom (bulgasaui gateun nom)</p>
+<p>Saengjeon cheoeum boneun nom (saengjeon cheoeum boneun nom)</p>
+<p>Jigureul dorabeorin nom (Hoo)</p>
+<p>I'll make you scream, when I go</p>
+
+<p>Naebeoryeo dwo, I don't mind</p>
+<p>Kkolsanaumyeon, nun gama</p>
+<p>Time is tickin', neomu ppalla</p>
+<p>Can't you see, I'm a warning sign? (Ayy-oh)</p>
+<p>Ije bulleo ttara (Hoo)</p>
+<p>Gyeokage teoreo (Ayy-oh)</p>
+<p>You know I'm fire</p>
+<p>Geunyang mamdaero umjingnyeo, we go up</p>
+
+<p>Ninety-two-four, kick that drum</p>
+<p>My ego in this show</p>
+<p>Dallarakkaji, go</p>
+<p>Ya, igeo michin pom</p>
+<p>Ah, yeah, yeah, yeah, chumman chwo</p>
+<p>My ego in this show</p>
+<p>Put 'em up, put 'em up, make 'em run</p>
+<p>Ja, ige michin pom</p>
+
+<p>Ssodajyeo naeryeo, rain (ssodajyeo naeryeo, rain, yeah)</p>
+<p>Ambition in my veins (Ambition in my veins)</p>
+<p>ATEEZ, go</p>
+<p>Janeul deureo, urireul wihayeo</p>
+<p>Make some noise</p>
+<p>Jigeum i sunganeul wihayeo, woah</p>
+
+<p>Ayy, oh, ayy</p>
+<p>We're changing the game</p>
+<p>Ayy, oh, ayy</p>
+<p>We're dancing every day</p>
+<p>Ayy, oh, ayy</p>
+<p>We're changing the game</p>
+<p>Ayy, oh, ayy</p>
+<p>We're dancing every day</p>
+
+<p>Geujeo mamdaero umjingnyeo, we go up</p>
+<p>We go up</p>
+<p>Geujeo mamdaero umjingnyeo, we go up</p>
+<p>(Ah, yeah, yeah, yeah)</p>
+<p>(Ah, yeah, yeah, yeah)</p>
+<p>We go up (Ah, yeah, yeah, yeah)</p>
+<p>Geujeo mamdaero umjingnyeo, we go up</p>
+
+        </div>
+        <div id="lyrics3">
+            <p>I got it back</p>
+            <p>Paneul dwijibeo This game</p>
+            <p>One chance baro jigeum ittae</p>
+            <p>Like that</p>
+            <p>Jjalpgo gangnyeolhan Escape</p>
+            <p>No next nareul ttara shwipge</p>
+            
+            <p>Jigyeo jigyeoweo</p>
+            <p>Jigeutjigeut tto</p>
+            <p>Ije gijigae</p>
+            <p>Jeogi bwa New world</p>
+            
+            <p>Jigyeo jigyeoweo</p>
+            <p>Sick and jikkeunjikkeun tto</p>
+            <p>Ije jichyeosseo So long</p>
+            
+            <p>Um sarajineun emotion</p>
+            <p>Um pyojeongeun bicheul ireoga</p>
+            <p>Um useumeun tongjega dweeo</p>
+            <p>Mugamgagman nameun chae No-oh</p>
+            
+            <p>Chameul su eopseo</p>
+            <p>No more lies</p>
+            <p>Shigani dwaesseo</p>
+            <p>Shoot the flashing light</p>
+            <p>Make a move</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Yeogijeogi ullyeo peojyeo Guerrilla</p>
+            
+            <p>This is how we shout</p>
+            <p>Keuge Keep it loud</p>
+            <p>Modu da nuntteul ttaekkaji</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Yeogijeogi ullyeo peojyeo Guerrilla</p>
+            
+            <p>This is how we fight</p>
+            <p>Now we're gonna ride</p>
+            <p>Sesangeul kkaeweo We are oh</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Sesangeul bakkul</p>
+            <p>We are the Guerrillas</p>
+            
+            <p>We gonna make it loud</p>
+            <p>Shimjangeun weonhae machi</p>
+            <p>Teojineun Beat and vibe</p>
+            <p>Wechyeodae Till I die</p>
+            
+            <p>Maengsehae bitgwa eodum</p>
+            <p>Geodeonael ttaekkaji da</p>
+            <p>Seongnan taedoneun</p>
+            <p>Ttangeul jeonbu ulliljieoda</p>
+            
+            <p>Hechyeo moyeo WBD</p>
+            <p>Eumaki mugi Hooligan</p>
+            
+            <p>Ullyeo peojyeo Guerrilla</p>
+            <p>Eoseo muneul yeoreora</p>
+            <p>Hwaryeohage Make it boom</p>
+            
+            <p>Gamjeonge nuneul garin chae sandaneun ge</p>
+            <p>Neoegen amu euimi eomneunga</p>
+            
+            <p>Chameul su eopseo</p>
+            <p>No more lies</p>
+            <p>Shigani dwaesseo</p>
+            <p>Shoot the flashing light</p>
+            <p>Make a move</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Yeogijeogi ullyeo peojyeo Guerrilla</p>
+            
+            <p>This is how we shout</p>
+            <p>Keuge Keep it loud</p>
+            <p>Modu da nuntteul ttaekkaji</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Yeogijeogi ullyeo peojyeo Guerrilla</p>
+            
+            <p>This is how we fight</p>
+            <p>Now we're gonna ride</p>
+            <p>Sesangeul kkaeweo We are oh</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Sesangeul bakkul</p>
+            <p>We are the Guerrillas</p>
+            
+            <p>Du gwireul makeun chae</p>
+            <p>Du nuneul garin chae</p>
+            <p>Ttokkateun inhyeongcheoreom</p>
+            <p>Sal sun eopjana</p>
+            
+            <p>Modu gogaereul deureo</p>
+            <p>Majuhara</p>
+            <p>Hwesaekbit</p>
+            <p>Sesangeul bwa</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Sesangeul bakkul</p>
+            <p>We are the Guerrillas</p>
+            
+            <p>The Guerrillas</p>
+            <p>(Break the wall)</p>
+            <p>The Guerrillas</p>
+            <p>(Break the wall)</p>
+            <p>The Guerrillas</p>
+            <p>(Break the wall)</p>
+            <p>The Guerrillas</p>
+            <p>(Break the wall)</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Sesangeul bakkul</p>
+            <p>We are the Guerrillas</p>
+            
+            <p>Chumeul chweo Break that wall</p>
+            <p>Uri Feello</p>
+            <p>Sesangeul bakkul</p>
+            <p>We are the Guerrillas</p>
+            
+        </div>
+        <div id="lyrics4">
+        <p>Gotta work (Gotta work)</p>
+        <p>Gotta make that money, make purse (Yes)</p>
+        <p>Got a fur coat, so I make it purr (Make it purr)</p>
+        <p>Give 'em whiplash when they see me earn (Woo)</p>
+        <p>Gotta, gotta, gotta work</p>
+        <p>Gotta make that money, make purse (Gotta make it)</p>
+        <p>Got a fur coat, so I make it purr (So I make it purr)</p>
+        <p>Gotta get that credit, get perks</p>
+        <p>Gotta, gotta, gotta work</p>
+        
+        <p>Yo, nun tteumyeon chakchak junbidoeneun golden plate (Ah)</p>
+        <p>Ije mak dochak L.A to Tokyo</p>
+        <p>Sichae matge goreun sigye classic type</p>
+        <p>Naega umjigimyeon dwittareuji guardians (Going all the way)</p>
+        <p>Eodireul gado twieonawa breaking news</p>
+        <p>Haru jongil nae noraega nawa radio (Going all the way)</p>
+        <p>Geunyeodeureun chumeul chune, flamingo</p>
+        <p>Heona nae siganeun geumiraseo adios</p>
+        
+        <p>Ganso que pone huevos de oro (Oh-oh)</p>
+        <p>Isipsasigan tabeul ssanneun jung</p>
+        <p>Gwansim eopji nan chinmok domoneun</p>
+        <p>No, no, no, no, no</p>
+        
+        <p>Gotta work (Gotta work)</p>
+        <p>Gotta make that money, make purse (Yes)</p>
+        <p>Got a fur coat, so I make it purr (Make it purr)</p>
+        <p>Give 'em whiplash when they see me earn (Woo)</p>
+        <p>Gotta, gotta, gotta work (Hey)</p>
+        <p>Gotta make that money, make purse (Gotta make that money, make purse; Gotta make it)</p>
+        <p>Got a fur coat, so I make it purr (Got a fur coat, so I make it purr; So I make it purr)</p>
+        <p>Gotta get that credit, get perks (Gotta get that credit, get perks)</p>
+        <p>Gotta, gotta, gotta work</p>
+        
+        <p>Gotta make that money, make purse</p>
+        
+        <p>(Ah-ha) pparabarabam dallyeo ssingssing</p>
+        <p>Gaja jikjin joeda masyeo, fresh air (Oh)</p>
+        <p>Onmome bichi nuni busyeo, gee, gee</p>
+        <p>Ttak bwara ttanttaraneun meot ttara ㄱㄱ</p>
+        <p>Aneun hyeonge sadone palchonkkaji</p>
+        <p>Dolgo dolmyeon jiguchon han gajogim</p>
+        <p>Naneun gwaenchana geunyang jinagayo</p>
+        <p>Uri bihaenggineun imi jijeongseogim (Fix on)</p>
+        <p>Yeah, purr, tteollyeo igeon machi jeteugi</p>
+        <p>Uh, haneureseo ppuryeo beoryeo seasoning (Stack, stack)</p>
+        <p>My clock ticks on a different beat</p>
+        <p>Chasing that dough? Wow, ride with me (Oh-oh)</p>
+        
+        <p>Ganso que pone huevos de oro (Oh-oh)</p>
+        <p>Isipsasigan tabeul ssanneun jung</p>
+        <p>Gwansim eopji nan chinmok domoneun</p>
+        <p>No, no, no, no, no (Ooh)</p>
+        
+        <p>Gotta work (Gotta work)</p>
+        <p>Gotta make that money, make purse (Yes)</p>
+        <p>Got a fur coat, so I make it purr (Make it purr)</p>
+        <p>Give 'em whiplash when they see me earn (Woo)</p>
+        <p>Gotta, gotta, gotta work (Hey)</p>
+        <p>Gotta make that money, make purse (Gotta make that money, make purse; Gotta make it)</p>
+        <p>Got a fur coat, so I make it purr (Got a fur coat, so I make it purr; So I make it purr)</p>
+        <p>Gotta get that credit, get perks (Gotta get that credit, get perks)</p>
+        <p>Gotta, gotta, gotta work</p>
+        
+        <p>Clock, tic-tac-toe, seodulleo</p>
+        <p>Jigeum bappa neon jom ppajyeojwo</p>
+        <p>Urineun jigeum haneul jeo wiro</p>
+        <p>You can't find me where I stand</p>
+        
+        <p>Gotta make that money, make purse</p>
+        <p>Money, make purse (Oh, yeah)</p>
+        <p>Oh, na-na-na, yeah</p>
+        <p>Give it up, give it up</p>
+        <p>Gotta make that money, make purse (Oh, yeah)</p>
+        <p>Give it up, give it up, up, up, yeah</p>
+        <p>Money, make purse (Give it up, give it up, up, up, yeah)</p>
+        <p>Give it, give it, give it</p>
+        <p>Gotta make that money, make</p>
+        
+        </div>
+    </div>
+
+
+    <script>
+        function openPopup(title, lyrics) {
+            document.getElementById("popupTitle").innerText = title;
+            document.getElementById("popupLyrics").innerHTML = lyrics;
+            document.getElementById("lyricsPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("lyricsPopup").style.display = "none";
+        }
+
+        // Close the popup when clicking outside of the content
+        window.onclick = function(event) {
+            const popup = document.getElementById("lyricsPopup");
+            if (event.target === popup) {
+                closePopup();
+            }
+        }
+    </script>
+
+</body>
+
+<footer class="rodape" id="contato">
+    <div class="rodape-div">
+
+        <div class="rodape-div-1">
+            <div class="rodape-div-1-coluna">
+                <!-- elemento -->
+                <img alt="" src="img/kpopland.png" width="130">
+                <p>Feito: Luiz Fernando</p>
+            </div>
+        </div>
+  
+        <div class="rodape-div-2">
+            <div class="rodape-div-2-coluna">
+                <!-- elemento -->
+                <span><b>Contatos</b></span>
+                <p>luiz.toledo12@etec.sp.gov.br</p>
+                <p>+55 12 996394245</p>
+            </div>
+        </div>
+  
+        <div class="rodape-div-3">
+            <div class="rodape-div-3-coluna">
+                <!-- elemento -->
+                <span><b>Links</b></span>
+                <p><a href="./rodapetelas/redes.html">Redes</a></p>
+                <p><a href="./rodapetelas/duvidas.html">Dúvidas</a></p>
+                <p><a href="sobre.html">Sobre</a></p>
+            </div>
+        </div>
+
+        <div class="rodape-div-4">
+            <div class="rodape-div-4-coluna">
+                <!-- elemento -->
+                <span><b>Outros</b></span>
+                <p>Políticas de Privacidade</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+
+</html>
+</div>
+</div>
+
+</div>
+
+</footer>
+
+
+</html>
+
+</html>
