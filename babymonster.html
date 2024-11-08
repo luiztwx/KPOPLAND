@@ -10,12 +10,63 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="aespa.css" rel="stylesheet">
   <title>BABYMONSTER</title>
+  <style>
+    .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .popup-content {
+        background-color: #121212;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        color: #f5f5f5;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .lyrics {
+        max-width: 100%;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .highlight {
+        color: #ff4d4d;
+        font-weight: bold;
+    }
+</style>
 </head>
 
 <body>
 
   <div id="navbar">
-    <a href="index.html"><img alt="Profile shot for Celina Harris" src="img/kpopland.png" width="140"></a> 
+    <a href="index.html"><img alt="Profile shot for Celina Harris" src="img/kpopland.png" width="140"></a>
+    <img alt="" src="https://i.pinimg.com/736x/b2/f1/5e/b2f15e59adfe55f37692859a6902410f.jpg" width="140"> 
   </div>
 
   <div class="conteudo">
@@ -89,8 +140,152 @@
     </article>
 
   </div>
+  <div id="lyricsPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h1 id="popupTitle">Título da Música</h1>
+        <div class="lyrics" id="popupLyrics">
+            <!-- Letras serão injetadas aqui -->
+        </div>
+    </div>
+</div>
 
+<h3>Músicas</h3>
+<div class="musicas">
+  <div class="player" id="music1">
+      <div class="imgbox">
+          <img src="https://i.pinimg.com/736x/c8/d4/07/c8d407fb969182f24f49cfab7e062692.jpg" alt="aespa">
+      </div>
+      <h4 class="unlock-regular" style="color: blueviolet;">Woke up in Tokyo</h4>
+      <audio src="musicas/Woke Up In Tokyo (RUKA & ASA).mp3" type="audio/mp3" controls></audio>
+      <div id="botao">
+          <button class="boton-elegante" onclick="openPopup('Woke up in Tokyo', document.getElementById('lyrics1').innerHTML)">Letra</button>
+      </div>
+  </div>
+
+    <div class="player" id="music2">
+        <div class="imgbox">
+            <img src="https://i.pinimg.com/736x/d7/9b/ee/d79bee8d1cc822acf86dfff1ef6ed063.jpg" alt="lesserafim">
+        </div>
+        <h4 class="unlock-regular" style="color: blueviolet;">DRIP</h4>
+        <audio src="musicas/DRIP.mp3" type="audio/mp3" controls></audio>
+        <div id="botao">
+            <button class="boton-elegante" onclick="openPopup('DRIP', document.getElementById('lyrics2').innerHTML)">Letra</button>
+        </div>
+    </div>
+
+    <div class="player2" id="music3">
+        <div class="imgbox">
+            <img src="https://i.pinimg.com/564x/fc/15/e6/fc15e6ae35f8226757f83cba2201ddba.jpg" alt="lesserafim">
+        </div>
+        <h4 class="unlock-regular" style="color: blueviolet;">Forever</h4>
+        <audio src="musicas/FOREVER.mp3" type="audio/mp3" controls></audio>
+        <div id="botao">
+            <button class="boton-elegante" onclick="openPopup('Forever', document.getElementById('lyrics3').innerHTML)">Letra</button>
+        </div>
+    </div>
+
+    <div class="player3" id="music4">
+        <div class="imgbox">
+            <img src="https://i.pinimg.com/564x/10/d7/6e/10d76e5ae1da99a061ebca2c3196ada2.jpg" alt="lesserafim">
+        </div>
+        <h4 class="unlock-regular" style="color: blueviolet;">Sheesh</h4>
+        <audio src="musicas/SHEESH.mp3" type="audio/mp3" controls></audio>
+        <div id="botao">
+            <button class="boton-elegante" onclick="openPopup('Sheesh', document.getElementById('lyrics4').innerHTML)">Letra</button>
+        </div>
+    </div>
+
+   
+</div>
+
+<h3>Albuns</h3>
+<div class="albuns">
+  <div class="card">
+      <img src="https://i.scdn.co/image/ab67616d0000b2736eb604294f8f58c9078f58b1" alt="" class="card-img">
+      <h2 class="card-title">Whiplash - The 5th Mini Album</h2>
+      <p class="card-text">aespa está de volta aos holofotes com seu mais recente mini-álbum Whiplash , apresentando o eletrizante single principal de mesmo nome.</p>
+      <span class="card-date">21 de Outubro de 2024</span>
+  </div>
+
+    <div class="card">
+        <img src="https://i.scdn.co/image/ab67616d0000b273d8cc2281fcd4519ca020926b" alt="" class="card-img">
+        <h2 class="card-title">Savage - The 1st Mini Album</h2>
+        <p class="card-text">È o primeiro mini-álbum do grupo feminino sul-coreano aespa, lançado em 5 de outubro de 2021 pela SM Entertainment. </p>
+        <span class="card-date">10 de Outubro de 2024</span>
+    </div>
+
+    <div class="card">
+        <img src="https://i.scdn.co/image/ab67616d0000b27304878afb19613a94d37b29ce" alt="Imagem da Notícia" class="card-img">
+        <h2 class="card-title">MY WORLD</h2>
+        <p class="card-text"> Foi lançado pela SM Entertainment em 8 de maio de 2023 e contém seis faixas, incluindo o single de pré-lançamento "Welcome to My World"</p>
+        <span class="card-date">10 de Outubro de 2024</span>
+    </div>
+
+    <div class="card">
+        <img src="https://i.scdn.co/image/ab67616d0000b273b3be3b970fc89a02f301c9da" alt="Imagem da Notícia" class="card-img">
+        <h2 class="card-title">Girls</h2>
+        <p class="card-text">È o segundo extended play do girl group sul-coreano Aespa. O EP foi lançado pela SM Entertainment e Warner Records em 8 de julho de 2022.</p>
+        <span class="card-date">10 de Outubro de 2024</span>
+    </div>
+
+    <div class="card">
+        <img src="https://i.scdn.co/image/ab67616d0000b273c54e39f2ae0dd10731f93c08" alt="Imagem da Notícia" class="card-img">
+        <h2 class="card-title">Drama</h2>
+        <p class="card-text">Drama é o quarto extended play do girl group sul-coreano Aespa. Foi lançado pela SM Entertainment em 10 de novembro de 2023.</p>
+        <span class="card-date">10 de Outubro de 2024</span>
+    </div> 
+
+    <div class="card">
+        <img src="https://i.scdn.co/image/ab67616d0000b273090cfa22962b115ac530674c" alt="Imagem da Notícia" class="card-img">
+        <h2 class="card-title">Armageddon</h2>
+        <p class="card-text"> Foi lançado pela SM em 27 de maio de 2024 e contém dez faixas, incluindo dois singles principais, "Supernova" e "Armageddon".</p>
+        <span class="card-date">10 de Outubro de 2024</span>
+    </div>
+</div>
+
+<div style="display: none;">
+  <div id="lyrics1">
+    
+  </div>
+
+  <div id="lyrics2">
+   
+  </div>
+
+  <div id="lyrics3">
+    
+  </div>
+
+  <div id="lyrics4">
+   
+  </div>
+
+ 
+</div>
+
+<script>
+  function openPopup(title, lyrics) {
+      document.getElementById("popupTitle").innerText = title;
+      document.getElementById("popupLyrics").innerHTML = lyrics;
+      document.getElementById("lyricsPopup").style.display = "block";
+  }
+
+  function closePopup() {
+      document.getElementById("lyricsPopup").style.display = "none";
+  }
+
+  // Close the popup when clicking outside of the content
+  window.onclick = function(event) {
+      const popup = document.getElementById("lyricsPopup");
+      if (event.target === popup) {
+          closePopup();
+      }
+  }
+</script>
+   
 </body>
+
 
 <footer class="rodape" id="contato">
   <div class="rodape-div">
